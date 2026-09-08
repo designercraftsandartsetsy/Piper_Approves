@@ -4,7 +4,7 @@ compatibility_date = "2026-01-01"
 
 [[kv_namespaces]]
 binding = "ETSY_STORE"
-id = "REPLACE_WITH_KV_NAMESPACE_ID"
+id = "6a444961187c48d19d2ffe93004f1691"
 
 # Secrets (set via `wrangler secret put <NAME>`, never in this file):
 #   ETSY_CLIENT_ID       - Etsy app keystring
