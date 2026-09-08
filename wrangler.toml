@@ -1,0 +1,13 @@
+name = "designer-tees-etsy-worker"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+[[kv_namespaces]]
+binding = "ETSY_STORE"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+# Secrets (set via `wrangler secret put <NAME>`, never in this file):
+#   ETSY_CLIENT_ID       - Etsy app keystring
+#   ETSY_CLIENT_SECRET   - Etsy app shared secret
+#   ETSY_REDIRECT_URI    - must exactly match the redirect URI registered in the Etsy app
+#   WORKER_AUTH_TOKEN    - a secret only Claude/you use to call this worker's endpoints
