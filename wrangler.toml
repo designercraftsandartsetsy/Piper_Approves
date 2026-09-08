@@ -6,8 +6,13 @@ compatibility_date = "2026-01-01"
 binding = "ETSY_STORE"
 id = "6a444961187c48d19d2ffe93004f1691"
 
-# Secrets (set via `wrangler secret put <NAME>`, never in this file):
-#   ETSY_CLIENT_ID       - Etsy app keystring
-#   ETSY_CLIENT_SECRET   - Etsy app shared secret
-#   ETSY_REDIRECT_URI    - must exactly match the redirect URI registered in the Etsy app
-#   WORKER_AUTH_TOKEN    - a secret only Claude/you use to call this worker's endpoints
+# Secrets/vars this worker reads (set via `wrangler secret put <NAME>`, or
+# Cloudflare dashboard -> Worker -> Settings -> Variables and Secrets; never
+# put these values in this file):
+#   ETSY_CLIENT_ID       - Etsy app keystring (from the Etsy developer portal)
+#   WORKER_AUTH_TOKEN    - a secret only you/Claude use to call this worker's
+#                          own endpoints (pick any long random string)
+#
+# The Etsy app's Shared Secret is not needed: this worker's OAuth flow uses
+# PKCE, and the redirect URI is computed at request time from the worker's
+# own URL (<worker-url>/oauth/callback) rather than stored as a secret.
